@@ -3,12 +3,12 @@ import Button from "./components/button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center max-w-[1024px] sm:items-start">
-        <div className="flex flex-row gap-[128px] w-full">
-          <div className="flex flex-col gap-[32px] flex-1">
-            <h1 className="text-7xl/20">
-              Belajar Bahasa Isyarat Kapan Saja, Di Mana Saja
+    <div className="grid grid-rows-[20px_1fr_20px] font-[family-name:var(--font-geist-sans)] mt-20">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center content-center sm:items-start">
+        <div className="flex flex-row gap-[128px] w-full pt-20 pb-20 max-w-[1100px] mx-auto">
+          <div className="flex flex-col gap-[32px] flex-1 margin">
+            <h1 className="text-7xl/22">
+              Belajar<br/>Bahasa Isyarat Kapan Saja,<br/>Di Mana Saja
             </h1>
             <p className="text-xl/6">
               Bergabung dengan komunitas belajar bahasa isyarat untuk memperluas
@@ -30,7 +30,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full bg-accent p-20">
-          <div className="flex flex-col bg-center align-middle content-center w-full max-w-1/2 mx-auto">
+          <div className="flex flex-col bg-center align-middle content-center w-full max-w-[1024px] mx-auto">
             <h1 className="text-center text-foreground mb-4">Tentang Kami</h1>
             <p className="text-foreground text-sm text-center opacity-90">
               Dengar Svara adalah startup yang memberdayakan komunitas tuli di

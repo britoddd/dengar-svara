@@ -3,14 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #EC5812;
+  --accent: #ec5812;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --font-sans: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+  --font-sans: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -28,15 +28,11 @@
   p {
     @apply text-gray-700 leading-relaxed;
   }
+
   button {
-    @apply p-2 border rounded-sm pl-8 pr-8 bg-accent text-foreground
+    @apply p-2 border rounded-sm pl-8 pr-8 bg-accent text-foreground;
   }
   input:focus {
-    @apply p-2 border rounded-sm pl-8 pr-8 bg-white text-foreground
+    @apply p-2 border rounded-sm pl-8 pr-8 bg-white text-foreground;
   }
-}
-
-body {
-  background: var(--foreground);
-  color: var(--background);
 }
