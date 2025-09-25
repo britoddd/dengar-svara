@@ -28,6 +28,12 @@
   p {
     @apply text-gray-700 leading-relaxed;
   }
+  button {
+    @apply p-2 border rounded-sm pl-8 pr-8 bg-accent text-foreground
+  }
+  input:focus {
+    @apply p-2 border rounded-sm pl-8 pr-8 bg-white text-foreground
+  }
 }
 
 body {
