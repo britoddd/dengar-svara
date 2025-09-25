@@ -1,23 +1,30 @@
+"use client";
 import Image from "next/image";
 import Button from "./components/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const onBergabung = () => {
+    router.push("/users/profile");
+  };
   return (
     <div className="grid grid-rows-[20px_1fr_20px] font-[family-name:var(--font-geist-sans)] mt-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center content-center sm:items-start">
         <div className="flex flex-row gap-[128px] w-full pt-20 pb-20 max-w-[1100px] mx-auto">
           <div className="flex flex-col gap-[32px] flex-1 margin">
             <h1 className="text-7xl/22">
-              Belajar<br/>Bahasa Isyarat Kapan Saja,<br/>Di Mana Saja
+              Belajar
+              <br />
+              Bahasa Isyarat Kapan Saja,
+              <br />
+              Di Mana Saja
             </h1>
             <p className="text-xl/6">
               Bergabung dengan komunitas belajar bahasa isyarat untuk memperluas
               aksesibilitas
             </p>
-            <Button
-              children={"Bergabung sekarang"}
-              onClick={undefined}
-            ></Button>
+            <Button children={"Bergabung sekarang"} onClick={onBergabung}></Button>
           </div>
           <div className="flex-shrink-0">
             <Image
