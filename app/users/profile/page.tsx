@@ -5,7 +5,7 @@ import Button from "@/app/components/button";
 
 export default function Profile() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <h1>Login</h1>
       <form>
         <label for="email">
@@ -27,10 +27,10 @@ export default function Profile() {
         />
         <div className="flex flex-row items-center justify-center mt-5">
           <button type="submit">Login</button>
-          <label className="pl-4">
+          <label className="pl-4 text-sm">
             Don't have account?{" "}
             <a className="text-accent" href="/users/profile">
-              Register here
+              Register
             </a>
           </label>
         </div>
