@@ -3,11 +3,11 @@ import Button from "./components/button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center content-center sm:items-start">
-        <div className="flex flex-row gap-[128px] w-full pt-20 pb-20 max-w-1/2">
+        <div className="flex flex-row gap-[128px] w-full pt-20 pb-20 max-w-1/2 mx-auto">
           <div className="flex flex-col gap-[32px] flex-1 margin">
-            <h1 className="text-7xl/24">
+            <h1 className="text-7xl/22">
               Belajar Bahasa Isyarat Kapan Saja, Di Mana Saja
             </h1>
             <p className="text-xl">
@@ -29,9 +29,16 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="w-full bg-accent max-w-1/2">
-          <div className="flex flex-col bg-center align-middle content-center w-full ">
-            <h1 className="text-center">Tentang Kami</h1>
+        <div className="w-full bg-accent p-20">
+          <div className="flex flex-col bg-center align-middle content-center w-full max-w-1/2 mx-auto">
+            <h1 className="text-center text-foreground mb-4">Tentang Kami</h1>
+            <p className="text-foreground text-sm text-center opacity-90">
+              Dengar Svara adalah startup yang memberdayakan komunitas tuli di
+              Indonesia melalui teknologi. Kami menyediakan platform yang
+              menghubungkan individu dengan disabilitas ke peluang profesional
+              dan juga menawarkan kursus bahasa isyarat yang komprehensif untuk
+              masyarakat umum.
+            </p>
           </div>
         </div>
       </main>
