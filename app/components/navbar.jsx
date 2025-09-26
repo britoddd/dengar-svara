@@ -1,10 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import handleClick from "@/app/Redirects";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const styles = "px-4 py-2 rounded-md font-medium transition-all";
+
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/");
+  };
 
   const variants = {
     primary: "bg-accent text-white hover:bg-accent/75",

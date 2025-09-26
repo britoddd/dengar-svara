@@ -8,7 +8,7 @@ export default function Profile() {
     <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <h1>Login</h1>
       <form>
-        <label for="email">
+        <label htmlFor="email">
           Email
           <br />
         </label>
@@ -29,7 +29,7 @@ export default function Profile() {
           <button type="submit">Login</button>
           <label className="pl-4 text-sm">
             Don't have account?{" "}
-            <a className="text-accent" href="/users/profile">
+            <a className="text-accent" href="/users/register">
               Register
             </a>
           </label>

@@ -1,7 +1,7 @@
 "use client"
 
 export default function Button({ children, variant = "primary", onClick }) {
-  const styles = "px-4 py-2 rounded-md font-medium transition-all w-auto";
+  const styles = "px-10 py-3 rounded-md font-medium transition-all w-fit";
 
   const variants = {
     primary: "bg-accent text-white hover:bg-accent/75",

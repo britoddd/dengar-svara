@@ -6,10 +6,10 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   const onBergabung = () => {
-    router.push("/users/profile");
+    router.push("/users/login");
   };
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] font-[family-name:var(--font-geist-sans)] mt-20">
+    <div className="grid grid-rows-[20px_1fr_20px] font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center content-center sm:items-start">
         <div className="flex flex-row gap-[128px] w-full pt-20 pb-20 max-w-[1100px] mx-auto">
           <div className="flex flex-col gap-[32px] flex-1 margin">
