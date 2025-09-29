@@ -11,8 +11,8 @@ export default function Navbar(alt) {
     router.push("/");
   };
 
-  const handleProfileClick = (e) => {
-    router.push(e);
+  const handleProfileClick = () => {
+    router.push("/users/login");
   };
 
   const variants = {
@@ -41,7 +41,7 @@ export default function Navbar(alt) {
         </div>
         <div className="flex flex-column justify-between pt-.6">
           <span className="material-symbols-outlined pr-3">search</span>
-          <span className="material-symbols-outlined" onClick={handleProfileClick("/users/login")}>person</span>
+          <span className="material-symbols-outlined" onClick={handleProfileClick}>person</span>
         </div>
       </div>
     </nav>
