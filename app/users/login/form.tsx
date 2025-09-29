@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+import { signIn } from "@/auth";
 import { useState } from "react";
 
 export function LoginForm() {
@@ -19,19 +19,14 @@ export function LoginForm() {
     const password = formData.get("password") as string;
 
     try {
-      const result = await signIn("credentials", {
+      await signIn("credentials", {
         email,
         password,
-        redirect: false,
+        redirectTo: "/users/profile",
       });
-
-      if (result?.error) {
-        setError("Invalid email or password");
-      } else {
-        // Login successful, redirect to profile or home
-        router.push("/users/profile");
-        router.refresh();
-      }
+      
+      // If we reach here, sign in was successful
+      // NextAuth v5 will handle the redirect automatically
     } catch (error) {
       setError("Something went wrong. Please try again.");
     } finally {
