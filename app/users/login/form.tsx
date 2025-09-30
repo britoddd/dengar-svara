@@ -18,9 +18,15 @@ export function LoginForm() {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
 
+    // Validate/sanitize if needed
+    if (!email || !password) {
+      setError("Please fill in all fields");
+      return;
+    }
+
     try {
       await signIn("credentials", {
-        email,
+        email: email.trim(),
         password,
         redirectTo: "/users/profile",
       });

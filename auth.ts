@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { loginSchema, getUserByEmail } from "@/lib/users";
+import { verifyPassword } from "@/lib/password";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -13,19 +14,27 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         try {
           const { email, password } = loginSchema.parse(credentials);
 
-          // Find user in our simple store
-          const user = getUserByEmail(email);
+          // Find user by email (includes password hash)
+          const user = await getUserByEmail(email);
 
-          if (!user || user.password !== password) {
+          if (!user) {
+            return null;
+          }
+
+          // Verify password against hash
+          const isValidPassword = await verifyPassword(password, user.password_hash);
+
+          if (!isValidPassword) {
             return null;
           }
 
           return {
-            id: user.id,
+            id: user.id.toString(),
             email: user.email,
             name: user.name,
           };
         } catch (error) {
+          console.error("Authorization error:", error);
           return null;
         }
       },

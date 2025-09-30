@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { registerSchema, createUser, getUserByEmail } from '@/lib/users'
+import { registerSchema, createUser, emailExists } from '@/lib/users'
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,29 +9,35 @@ export async function POST(request: NextRequest) {
     const validatedData = registerSchema.parse(body)
     
     // Check if user already exists
-    const existingUser = getUserByEmail(validatedData.email)
-    if (existingUser) {
+    const userExists = await emailExists(validatedData.email)
+    if (userExists) {
       return NextResponse.json(
         { error: 'User with this email already exists' },
         { status: 400 }
       )
     }
     
-    // Create new user (in production, hash the password here)
-    const newUser = createUser(validatedData)
-    
-    // Return success response without password
-    const { password, ...userWithoutPassword } = newUser
+    // Create new user (password will be hashed automatically)
+    const newUser = await createUser(validatedData)
     
     return NextResponse.json(
       { 
         message: 'User created successfully', 
-        user: userWithoutPassword 
+        user: newUser 
       },
       { status: 201 }
     )
     
-  } catch (error) {
+  } catch (error: any) {
+    console.error('Registration error:', error)
+    
+    if (error.message === 'Email already exists') {
+      return NextResponse.json(
+        { error: 'User with this email already exists' },
+        { status: 400 }
+      )
+    }
+    
     if (error instanceof Error && 'errors' in error) {
       // Zod validation error
       return NextResponse.json(
